@@ -1,0 +1,43 @@
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { PersonaCrudService } from 'src/app/servicios/persona/persona-crud.service'; 
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-persona-crear',
+  templateUrl: './persona-crear.component.html',
+  styleUrls: ['./persona-crear.component.css']
+})
+export class PersonaCrearComponent implements OnInit {
+
+  data:FormGroup
+
+  constructor(
+    private formulario:FormBuilder,
+    private crudService:PersonaCrudService,
+    private router:Router,
+    
+    
+    ){
+    this.data = this.formulario.group({
+      rut:[0],
+      nombres:[''],
+      apellidos:['']
+    })
+  }
+
+  ngOnInit(): void {
+  }
+
+  nuevaPersona():any{
+    this.crudService.guardarPersona(this.data.value).subscribe(res =>{
+
+      this.router.navigateByUrl('personas')
+      console.log('respuesta', res)
+    })
+
+  }
+
+}
