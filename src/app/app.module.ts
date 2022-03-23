@@ -13,6 +13,7 @@ import { FormsModule,  ReactiveFormsModule} from '@angular/forms';
 import { PersonaListarComponent } from './personas/persona-listar/persona-listar.component';
 import { PersonaCrearComponent } from './personas/persona-crear/persona-crear.component';
 import { PersonaActualizarComponent } from './personas/persona-actualizar/persona-actualizar.component';
+import { DetalleComponent } from './personas/detalle/detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PersonaActualizarComponent } from './personas/persona-actualizar/person
     ContactComponent,
     PersonaListarComponent,
     PersonaCrearComponent,
-    PersonaActualizarComponent
+    PersonaActualizarComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,

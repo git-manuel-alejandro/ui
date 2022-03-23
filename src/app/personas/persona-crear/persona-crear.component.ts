@@ -13,6 +13,10 @@ import { Router } from '@angular/router';
 export class PersonaCrearComponent implements OnInit {
 
   data:FormGroup
+  error:any[] = []
+  eRut:string = ''
+  eNombres:string = ''
+  eApellidos:string = ''
 
   constructor(
     private formulario:FormBuilder,
@@ -32,10 +36,17 @@ export class PersonaCrearComponent implements OnInit {
   }
 
   nuevaPersona():any{
-    this.crudService.guardarPersona(this.data.value).subscribe(res =>{
+    this.crudService.guardarPersona(this.data.value).subscribe((res) =>{
+      alert('Persona Ingresada')
 
       this.router.navigateByUrl('personas')
       console.log('respuesta', res)
+    }, (err)=>{
+
+      this.eRut = err.error.rut[0]
+      this.eNombres = err.error.nombres[0]
+      this.eApellidos = err.error.apellidos[0]
+      // console.log(err.error.rut[0])
     })
 
   }

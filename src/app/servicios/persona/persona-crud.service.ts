@@ -20,5 +20,9 @@ export class PersonaCrudService {
     return this.clientHttp.get(this.API+'persona/')
   }
 
+  getPersonaId(id:any){    
+    return this.clientHttp.get(this.API+'persona/'+id)
+  }
+
 
 }

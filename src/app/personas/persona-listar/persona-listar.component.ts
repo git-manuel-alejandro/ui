@@ -30,15 +30,13 @@ export class PersonaListarComponent implements OnInit {
       this.personas = res
     })}
 
-  eliminarPersona(id:any){
-    this.http.delete<any>(environment.API_URL+'persona/'+id,  {observe: 'response'}).subscribe(res=>{
-      if(res.status == 204) {
-        alert('Eliminado!!')
-      }else{
-        console.log(res)
-      }
-      this.getPersonas()
-    });
+  eliminarPersona(id:any, i:any){
+    if(window.confirm('Esta seguro?')){
+      this.http.delete<any>(environment.API_URL+'persona/'+id,  {observe: 'response'}).subscribe(res=>{       
+        this.personas.splice(i,1)
+      });
+
+    }
   }
 
 }
