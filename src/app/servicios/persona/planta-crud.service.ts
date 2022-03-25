@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PersonaCrudService {
+export class PlantaCrudService {
 
   API:string = environment.API_URL
   constructor(private clientHttp:HttpClient) { }
@@ -21,7 +21,7 @@ export class PersonaCrudService {
   }
 
   getAsde(id:any){    
-    return this.clientHttp.get(this.API+'persona/?=id_persona='+id)
+    return this.clientHttp.get(this.API+'planta/?id_persona='+id)
   }
 
 
