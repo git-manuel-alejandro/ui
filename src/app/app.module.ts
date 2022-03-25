@@ -14,6 +14,8 @@ import { PersonaListarComponent } from './personas/persona-listar/persona-listar
 import { PersonaCrearComponent } from './personas/persona-crear/persona-crear.component';
 import { PersonaActualizarComponent } from './personas/persona-actualizar/persona-actualizar.component';
 import { DetalleComponent } from './personas/detalle/detalle/detalle.component';
+import { ListarAsdeComponent } from './planta/asde/listar-asde/listar-asde.component';
+import { PlantaComponent } from './planta/planta/planta.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DetalleComponent } from './personas/detalle/detalle/detalle.component';
     PersonaListarComponent,
     PersonaCrearComponent,
     PersonaActualizarComponent,
-    DetalleComponent
+    DetalleComponent,
+    ListarAsdeComponent,
+    PlantaComponent
   ],
   imports: [
     BrowserModule,

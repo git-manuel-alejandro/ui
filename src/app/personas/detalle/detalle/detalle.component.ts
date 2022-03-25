@@ -14,6 +14,7 @@ export class DetalleComponent implements OnInit {
   constructor(
     private crudService:PersonaCrudService,
     private activateRoute:ActivatedRoute,
+    private router:Router,
   ) {
     this.id = this.activateRoute.snapshot.paramMap.get('id')
     this.crudService.getPersonaId(this.id).subscribe(res=>{
@@ -25,6 +26,10 @@ export class DetalleComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  planta(){
+    this.router.navigateByUrl('planta/'+ this.id)
   }
 
 }
